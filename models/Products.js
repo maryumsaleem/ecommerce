@@ -36,7 +36,7 @@ let ProductSchema = new mongoose.Schema({
     type: String,
     required: [true, "Image Id is Required"],
   },
-  Category: {
+  category: {
     type:mongoose.Schema.Types.ObjectId,
     ref: "Category",
     required: [true, "Category is Required"],

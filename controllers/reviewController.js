@@ -37,13 +37,12 @@ module.exports = {
 
       let query = Reviews.find(JSON.parse(queryStr)).populate({
         path: 'product',
+        model:'Product',
         populate: {
           path: 'category',
           model: 'Category'
         }
       });
-      
-
       // Sorting
       if (req.query.sort) {
         const sortBy = req.query.sort.split(",").join(" ");

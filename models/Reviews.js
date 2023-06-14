@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 let ReviewSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -6,6 +7,8 @@ let ReviewSchema = new mongoose.Schema({
   },
   details: {
     type: String,
+
+
     required: [true, "Review Must have Details!"],
   },
   rating: {
@@ -18,9 +21,6 @@ let ReviewSchema = new mongoose.Schema({
     ref: "Product",
     required: [true, "Product is Required"],
   },
-  // category:{
-  //   categoryDate:{type:[CategorySchema]}
-  // },
   createdAt: {
     type: Date,
     default: Date.now(),
